@@ -2,6 +2,10 @@
 // O conteúdo deste arquivo não deve ser modificado!
 //******************** ATENÇÃO! *********************
 // arquivo: src/apl2/LinkedListOriginal.java
+//INTEGRANTES:
+//Matheus Medeiros, RA: 10748040
+//Pedro Botelho, RA: 10738317
+//Daniel Arais, RA: 10419718
 
 package apl2;
 

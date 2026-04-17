@@ -3,7 +3,10 @@
 //*************************** ATENÇÃO! *****************************
 // arquivo: src/apl2/Operation.java
 
-// TODO: Colocar a identificação dos(as) integrantes aqui.
+//INTEGRANTES:
+//Matheus Medeiros, RA: 10748040
+//Pedro Botelho, RA: 10738317
+//Daniel Arais, RA: 10419718
 
 package apl2;
 

@@ -5,7 +5,10 @@
 //*************************** ATENÇÃO! ****************************
 // arquivo: src/MainApl2.java
 
-// TODO: Colocar a identificação dos(as) integrantes aqui.
+//INTEGRANTES:
+//Matheus Medeiros, RA: 10748040
+//Pedro Botelho, RA: 10738317
+//Daniel Arais, RA: 10419718
 // TODO: Listar todas as referências consultadas para solucionar a atividade.
 
 import apl2.DLinkedList;
