@@ -16,15 +16,20 @@ package apl2;
 // -- A classe deve implementar as operações a seguir, respeitando o
 // comportamento descrito em cada operação.
 
-public class DLinkedList {
+public class DLinkedList <T> {
 	
 	// TODO: Implementar a classe conforme o enunciado da atividade Apl2.
-
+	private Node<T> head;
+	private Node<T> tail;
+	private int size;
 
 // OPERAÇÃO:		Método construtor
 // COMPORTAMENTO:	Cria uma lista vazia.
 	public DLinkedList() {
 		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
+		head = null;
+		tail = null;
+		size = 0;
 		throw new UnsupportedOperationException("Método ainda não implementado.");
 	}
 
@@ -81,8 +86,8 @@ public class DLinkedList {
 // COMPORTAMENTO:	Retorna uma referência para o nó do início da lista.
 //					Ou retorna null caso a lista esteja vazia.
 	public Node getHead() {
-		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+		return head;
+		//throw new UnsupportedOperationException("Método ainda não implementado.");
 	}
 
 
@@ -90,8 +95,8 @@ public class DLinkedList {
 // COMPORTAMENTO:	Retorna uma referência para o nó do final da lista.
 //					Ou retorna null caso a lista esteja vazia.
 	public Node getTail() {
-		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+		return tail;
+		//throw new UnsupportedOperationException("Método ainda não implementado.");
 	}
 
 
@@ -117,6 +122,7 @@ public class DLinkedList {
 // COMPORTAMENTO:	Retorna true se a lista estiver vazia ou false, caso contrário.
 	public boolean isEmpty() {
 		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
+		return getHead() == null && getTail() == null;
 		throw new UnsupportedOperationException("Método ainda não implementado.");
 	}
 
