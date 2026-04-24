@@ -18,7 +18,64 @@ package apl2;
 // {...}, retornando uma string com os valores dos atributos da classe.
 
 public class Node {
-	
-	// TODO: Implementar a classe conforme o enunciado da atividade Apl2.
-	
+    private String idPessoa;
+    private String nomePessoa;
+    private Float notaPessoa;
+    private Node previous;
+    private Node next;
+    
+    public Node() {}
+    
+    public Node(String idPessoa, String nomePessoa, Float notaPessoa, Node previous, Node next) {
+        this.idPessoa = idPessoa;
+        this.nomePessoa = nomePessoa;
+        setNotaPessoa(notaPessoa);
+        this.previous = previous;
+        this.next = next;
+    }
+
+    public String getIdPessoa() {
+        return idPessoa;
+    }
+
+    public String getNomePessoa() {
+        return nomePessoa;
+    }
+
+    public Float getNotaPessoa() {
+        return notaPessoa;
+    }
+
+    public Node getPrevious() {
+        return previous;
+    }
+
+    public Node getNext() {
+        return next;
+    }
+
+    public void setIdPessoa(String idPessoa) {
+        this.idPessoa = idPessoa;
+    }
+
+    public void setNomePessoa(String nomePessoa){
+        this.nomePessoa = nomePessoa;
+    }
+
+    public void setNotaPessoa(Float notaPessoa) {
+        this.notaPessoa = (notaPessoa == null) ? 99.9f : notaPessoa;
+    }
+
+    public void setPrevious(Node previous) {
+        this.previous = previous;
+    }
+
+    public void setNext(Node next) {
+        this.next = next;
+    }
+
+    @Override
+    public String toString() {
+        return "[dados: (" + id + ";" + nome + ";" + inteiro + ";" + decimo + ") | next: " + next + "]";
+    } 
 }
