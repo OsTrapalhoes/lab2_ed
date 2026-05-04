@@ -122,8 +122,7 @@ public class DLinkedList <T> {
 // COMPORTAMENTO:	Retorna true se a lista estiver vazia ou false, caso contrário.
 	public boolean isEmpty() {
 		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		return getHead() == null && getTail() == null;
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+		return true;
 	}
 
 

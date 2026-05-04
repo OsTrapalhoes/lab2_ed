@@ -17,7 +17,7 @@ package apl2;
 // -- A classe deve sobrescrever (override) o método public String toString()
 // {...}, retornando uma string com os valores dos atributos da classe.
 
-public class Node {
+public class Node<T> {
     private String idPessoa;
     private String nomePessoa;
     private Float notaPessoa;
@@ -76,6 +76,6 @@ public class Node {
 
     @Override
     public String toString() {
-        return "[dados: (" + id + ";" + nome + ";" + inteiro + ";" + decimo + ") | next: " + next + "]";
+        return "[dados: " + idPessoa + ";" + nomePessoa + ";" + notaPessoa + "]";
     } 
 }
