@@ -37,8 +37,20 @@ public class DLinkedList <T> {
 // OPERAÇÃO:		insert(<dados da pessoa>)
 // COMPORTAMENTO:	Aloca um Node que contém os <dados da pessoa> e insere o
 //					novo nó no início da lista.
-	public void insert(/*dados da pessoa*/) {
-		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
+	public void insert(String idPessoa, String nomePessoa, Float notaPessoa, Node next) {
+		Node novo = new Node(idPessoa, nomePessoa, notaPessoa, null, next);
+		novo.setIdPessoa(idPessoa);
+		novo.setNomePessoa(nomePessoa);
+		novo.setNotaPessoa(notaPessoa);
+		novo.setPrevious(null);
+		novo.setNext(next);
+
+		if(isEmpty) {
+			head = novo;
+			tail = head;
+		}
+
+
 		throw new UnsupportedOperationException("Método ainda não implementado.");
 	}
 
