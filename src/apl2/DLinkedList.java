@@ -45,7 +45,7 @@ public class DLinkedList <T> {
 		novo.setPrevious(null);
 		novo.setNext(next);
 
-		if(isEmpty) {
+		if(isEmpty()) {
 			head = novo;
 			tail = head;
 		}
@@ -57,7 +57,7 @@ public class DLinkedList <T> {
 
 // OPERAÇÃO:		append(<dados da pessoa>)
 // COMPORTAMENTO:	Aloca um Node que contém os <dados da pessoa> e insere o
-//					novo nó no final da lista.
+//	novo nó no final da lista.
 	public void append(/*dados da pessoa*/) {
 		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
 		throw new UnsupportedOperationException("Método ainda não implementado.");
