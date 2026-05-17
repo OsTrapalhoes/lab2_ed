@@ -94,9 +94,25 @@ public class Operation {
 	 * @param data Base de dados mapeada para o formato {@code DLinkedList} (via operação {@code map()}).
 	 * @return {@code String} com a coleção de dados separada por ponto-e-vírgula (dados de cada pessoa) e quebras de linha (cada pessoa).
 	 */
-	public static String mapToString(final DLinkedList data) {
-		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+    public static String mapToString(final DLinkedList data) {
+        try {
+            StringBuilder sb = new StringBuilder();
+            Node currentNode = data.getHead();
+            while (currentNode != null) {
+                sb.append(currentNode.getIdPessoa() + ";");
+                sb.append(currentNode.getNomePessoa() + ";");
+                sb.append(currentNode.getNotaPessoa() + ";\n");
+                currentNode = currentNode.getNext();
+            }
+            if (sb.isEmpty()) {
+                throw new Exception("Couldn\'t parse LinkedList to String because List.size is leaser than 1.");
+            }
+            else {
+                return sb.toString();
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
 	}
 
 }
