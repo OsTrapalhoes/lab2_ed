@@ -22,8 +22,22 @@ public class Operation {
 	 * @return Uma nova {@code DLinkedList} que contém o mapeamento da coleção de dados {@code original} para a nova estrutura usada pelo sistema de notas. 
 	 */
 	public static DLinkedList map(final LinkedListOriginal original) {
-		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+				DlinkedList novaLista = new DLinkedList();
+		NodeOriginal atual = original.getHead();
+		
+		while (atual != null) {
+			String idPessoa = "23.S1-" + atual.getId();
+			String nomePessoa = atual.getNome();
+			Float notaPessoa = null;
+
+			if (atual.getInterio() >= 0){
+				String valorNota = atual.getInterio() + "." + atual.getDecimo();
+				notaPessoa = Float.valueOf(valorNota);
+			}
+			novaLista.append(idPessoa, nomePessoa, notaPessoa);
+			atual = atual.getNext();
+		}
+		return novaLista;
 	}
 
 	/**
