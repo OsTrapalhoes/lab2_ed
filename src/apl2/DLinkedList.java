@@ -77,13 +77,12 @@ public class DLinkedList <T> {
 		}
 
 		Node removido = head;
-
 		head = head.getNext();
 
 		if(head == null) {
 			tail = null;
 		} else {
-			head.setPrevious(tail);
+			head.setPrevious(null);
 		}
 
 		size--;
@@ -104,9 +103,19 @@ public class DLinkedList <T> {
 		}
 
 		Node removido = tail;
+		tail = tail.getPrevious();
 
-		tail = tail.get
-	}
+		if(tail == null) {
+			head = null;
+		} else {
+			tail.setNext(null);
+		}
+
+		size--;
+		removido.setPrevious(null);
+
+		return removido;
+	} 
 
 
 // OPERAÇÃO:		removeNode(<ID da pessoa>)
@@ -115,7 +124,28 @@ public class DLinkedList <T> {
 //					Ou retorna null caso não exista um nó com <ID da pessoa>.
 	public Node removeNode(String id) {
 		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+		Node removido = getNode(id);
+
+		if (removido == null) {
+			return null;
+		} 
+		if (removido == head) {
+			return removeHead();
+		}
+		if (removido == tail) {
+			return removeTail();
+		}
+
+		Node vizinhoEsq = removido.getPrevious();
+		Node vizinhoDir = removido.getNext();
+
+		vizinhoEsq.setNext(vizinhoDir);
+		vizinhoDir.setPrevious(vizinhoEsq);
+
+		size--;
+	 	removido.setNext(null);
+	 	removido.setPrevious(null);
+		return removido;
 	}
 
 
@@ -124,7 +154,6 @@ public class DLinkedList <T> {
 //					Ou retorna null caso a lista esteja vazia.
 	public Node getHead() {
 		return head;
-		//throw new UnsupportedOperationException("Método ainda não implementado.");
 	}
 
 
@@ -133,7 +162,6 @@ public class DLinkedList <T> {
 //					Ou retorna null caso a lista esteja vazia.
 	public Node getTail() {
 		return tail;
-		//throw new UnsupportedOperationException("Método ainda não implementado.");
 	}
 
 
@@ -175,7 +203,9 @@ public class DLinkedList <T> {
 // COMPORTAMENTO:	Esvazia a lista, liberando a memória de todos os nós da lista.
 	public void clear() {
 		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+		while(!isEmpty()) {
+			removeHead();
+		}
 	}
 
 
@@ -185,7 +215,33 @@ public class DLinkedList <T> {
 	@Override
 	public String toString() {
 		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+		StringBuilder sb = new StringBuilder();
+		sb.append("(").append(size).append(")");
+		
+		Node atual = head;
+		while(atual != null){
+			String textoAnterior = "null";
+			if(atual.getPrevious() != null) {
+				textoAnterior = atual.getPrevious().getIdPessoa();
+			}
+			
+			String textoPosterior = "null";
+			if(atual.getNext() != null) {
+				textoPosterior = atual.getNext().getIdPessoa();
+			}
+
+			sb.append(textoAnterior)
+			.append(" <- (")
+			.append(atual.getIdPessoa()).append("; ")
+			.append(atual.getNomePessoa()).append("; ")
+			.append(atual.getNotaPessoa())
+			.append(") -> ")
+			.append(textoPosterior)
+			.append("\n");
+
+			atual = atual.getNext();
+		}
+		return sb.toString();
 	}
 
 }
