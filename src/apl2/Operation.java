@@ -22,18 +22,20 @@ public class Operation {
 	 * @return Uma nova {@code DLinkedList} que contém o mapeamento da coleção de dados {@code original} para a nova estrutura usada pelo sistema de notas. 
 	 */
 	public static DLinkedList map(final LinkedListOriginal original) {
-				DlinkedList novaLista = new DLinkedList();
+		DLinkedList novaLista = new DLinkedList();
 		NodeOriginal atual = original.getHead();
-		
+
 		while (atual != null) {
 			String idPessoa = "23.S1-" + atual.getId();
 			String nomePessoa = atual.getNome();
 			Float notaPessoa = null;
 
-			if (atual.getInterio() >= 0){
-				String valorNota = atual.getInterio() + "." + atual.getDecimo();
+			// ✅ Garante que ambos inteiro e décimo são válidos antes de montar a string
+			if (atual.getInteiro() >= 0 && atual.getDecimo() >= 0) {
+				String valorNota = atual.getInteiro() + "." + atual.getDecimo();
 				notaPessoa = Float.valueOf(valorNota);
 			}
+
 			novaLista.append(idPessoa, nomePessoa, notaPessoa);
 			atual = atual.getNext();
 		}
@@ -54,7 +56,7 @@ public class Operation {
 		Node atual = data.getHead();
 
 		while (atual != null){
-			if (atual.getNOtaPessoa() != 99.9f) {
+			if (atual.getNotaPessoa() != 99.9f) {
 				listaFiltrada.append(atual.getIdPessoa(), atual.getNomePessoa(), atual.getNotaPessoa());
 			}
 			atual = atual.getNext();
@@ -72,11 +74,11 @@ public class Operation {
 	 * @return Uma nova {@code DLinkedList} que contém a coleção de dados ({@code data}) filtrada com nós que possuem apenas pessoas com notas inválidas.
 	 */
 	public static DLinkedList filterRemoveGraded(final DLinkedList data) {
-		DlinkedList listaFiltrada = new DLinkedList();
+		DLinkedList listaFiltrada = new DLinkedList();
 		Node atual = data.getHead();
 
 		while (atual != null){
-			if (atual.getNOtaPessoa() == 99.9f) {
+			if (atual.getNotaPessoa() == 99.9f) {
 				listaFiltrada.append(atual.getIdPessoa(), atual.getNomePessoa(), atual.getNotaPessoa());
 			}
 			atual = atual.getNext();
@@ -96,7 +98,7 @@ public class Operation {
 	 * @return Uma nova {@code DLinkedList} que contém a coleção de dados ({@code data}) filtrada somente com pessoas com notas maiores do que {@code average}.
 	 */
 	public static DLinkedList filterRemoveBelowAverage(final DLinkedList data, float average) {
-		DlinkedList listaFiltrada = new DLinkedList();
+		DLinkedList listaFiltrada = new DLinkedList();
 		Node atual = data.getHead();
 
 		while (atual != null){

@@ -112,7 +112,7 @@ public class MainApl2 {
     }
 
     public static void txtFileConsumer(LinkedListOriginal list) {
-        try (BufferedReader bf = new BufferedReader(new FileReader("../dados.txt"))) {
+        try (BufferedReader bf = new BufferedReader(new FileReader("dados.txt"))) {
             String line;
             while ((line = bf.readLine()) != null) {
                 String[] infos = line.split("#");
@@ -124,7 +124,7 @@ public class MainApl2 {
     }
 
     public static void csvFileWriter(String content) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("dados.txt"))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("dados.csv"))) {
             bw.append(content);
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
