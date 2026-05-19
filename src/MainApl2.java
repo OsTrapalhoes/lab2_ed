@@ -32,8 +32,7 @@ public class MainApl2 {
         // TODO: Carregar o conteúdo do arquivo "dados.txt" e adicionar cada linha como um nó na LinkedListOriginal list.
         // DONE
         txtFileConsumer(list);
-        System.out.println(list);
-        
+
         System.out.println(">>>>>>>>>> Dados originais (sistema legado) >>>>>>>>>>");
         System.out.println(list);
         System.out.println("<<<<<<<<<< Dados originais (sistema legado) <<<<<<<<<<\n");
