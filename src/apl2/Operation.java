@@ -30,7 +30,6 @@ public class Operation {
 			String nomePessoa = atual.getNome();
 			Float notaPessoa = null;
 
-			// ✅ Garante que ambos inteiro e décimo são válidos antes de montar a string
 			if (atual.getInteiro() >= 0 && atual.getDecimo() >= 0) {
 				String valorNota = atual.getInteiro() + "." + atual.getDecimo();
 				notaPessoa = Float.valueOf(valorNota);
