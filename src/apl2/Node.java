@@ -76,6 +76,20 @@ public class Node<T> {
 
     @Override
     public String toString() {
-        return "[dados: " + idPessoa + ";" + nomePessoa + ";" + notaPessoa + "]";
+        String textoAnterior;
+        String textoPosterior;
+        String resultado;
+        if (previous != null) {
+            textoAnterior = previous.getIdPessoa();
+        } else {
+            textoAnterior = "null";
+        }
+        if (next != null) {
+            textoPosterior = next.getIdPessoa();
+        } else {
+            textoPosterior = "null";
+        }
+        resultado = textoAnterior + " <- " + idPessoa + " - " + nomePessoa + " - " + notaPessoa + " -> " + textoPosterior;
+        return resultado;
     } 
 }

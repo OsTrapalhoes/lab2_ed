@@ -36,8 +36,8 @@ public class DLinkedList <T> {
 // OPERAÇÃO:		insert(<dados da pessoa>)
 // COMPORTAMENTO:	Aloca um Node que contém os <dados da pessoa> e insere o
 //					novo nó no início da lista.
-	public void insert(String idPessoa, String nomePessoa, Float notaPessoa, Node next) {
-		Node novo = new Node(idPessoa, nomePessoa, notaPessoa, null, next);
+	public void insert(String idPessoa, String nomePessoa, Float notaPessoa) {
+		Node novo = new Node(idPessoa, nomePessoa, notaPessoa, null, head);
 		if(isEmpty()) {
 			tail = novo;
 		} else {
@@ -216,7 +216,7 @@ public class DLinkedList <T> {
 	public String toString() {
 		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
 		StringBuilder sb = new StringBuilder();
-		sb.append("(").append(size).append(")");
+		sb.append("(").append(size).append(") \n");
 		
 		Node atual = head;
 		while(atual != null){

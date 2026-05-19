@@ -152,7 +152,7 @@ public class Operation {
             while (currentNode != null) {
                 sb.append(currentNode.getIdPessoa() + ";");
                 sb.append(currentNode.getNomePessoa() + ";");
-                sb.append(currentNode.getNotaPessoa() + ";\n");
+                sb.append(currentNode.getNotaPessoa() + "\n");
                 currentNode = currentNode.getNext();
             }
             if (sb.isEmpty()) {
