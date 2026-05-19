@@ -89,7 +89,7 @@ public class Node<T> {
         } else {
             textoPosterior = "null";
         }
-        resultado = textoAnterior + " <- " + idPessoa + " - " + nomePessoa + " - " + notaPessoa + " -> " + textoPosterior;
+        resultado = textoAnterior + " <- (" + idPessoa + " - " + nomePessoa + " - " + notaPessoa + ") -> " + textoPosterior;
         return resultado;
     } 
 }
